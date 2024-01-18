@@ -6,9 +6,11 @@ The UUID of the device will be used to update the /etc/fstab file;
 sudo blkid
 ```
 
-![5031](https://github.com/SnehaS28/Dev-project-1/blob/images/devmapper-apps.png)
+![5031](https://github.com/SnehaS28/Dev-project-1/assets/109750527/5582640b-3c38-456f-bc40-4572746d50c8)
 
-![5032](https://github.com/SnehaS28/Dev-project-1/blob/images/devmapper-webdata.png)
+
+![5032](https://github.com/SnehaS28/Dev-project-1/assets/109750527/db20c513-c06a-43aa-809f-a4a5e15028e5)
+
 
 ```
 sudo vi /etc/fstab
@@ -16,7 +18,8 @@ sudo vi /etc/fstab
 
 Update /etc/fstab in this format using your own UUID and rememeber to remove the leading and ending quotes.
 
-![5033](https://github.com/SnehaS28/Dev-project-1/blob/images/updateetc.png)
+![5033](https://github.com/SnehaS28/Dev-project-1/assets/109750527/f0f889b1-fecd-40d6-b8bd-4d97b595e49d)
+
 
 
 1. Test the configuration and reload the daemon
@@ -28,7 +31,7 @@ sudo systemctl daemon-reload
 
 2. Verify your setup by running df -h, output must look like this:
 
-![5034](https://github.com/SnehaS28/Dev-project-1/blob/images/ect-updated.png)
+![5034](https://github.com/SnehaS28/Dev-project-1/assets/109750527/c5b79c14-fd4a-4127-960b-5541e55b72ed)
 
 
 Step 2 — Prepare the Database Server
@@ -157,18 +160,20 @@ workstation’s IP)
 
 http://<Web-Server-Public-IP-Address>/wordpress/
   
-![5040](https://github.com/SnehaS28/Dev-project-1/blob/images/intialpagewordpress.png)
+![5040](https://github.com/SnehaS28/Dev-project-1/assets/109750527/74966c61-ae06-47b9-a405-612f640a9738)
 
   
 Fill out your DB credentials:
   
-![5050](https://github.com/SnehaS28/Dev-project-1/blob/images/installationpagewp.png)
+![5050](https://github.com/SnehaS28/Dev-project-1/assets/109750527/93aebce0-442d-47d7-b030-c1f474182096)
+
 
 
 Login to your Wordpress:
   
 
-![5060](https://github.com/SnehaS28/Dev-project-1/blob/images/wordpress.png)
+![5060]![wordpress](https://github.com/SnehaS28/Dev-project-1/assets/109750527/39c7b64a-945f-4bc0-a339-c2107b777356)
+
 
 
 Important: Do not forget to STOP your EC2 instances after completion of the project to avoid extra costs.
