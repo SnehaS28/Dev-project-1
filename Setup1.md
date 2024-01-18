@@ -5,12 +5,14 @@ Step 1 — Prepare a Web Server
 1. Launch an EC2 instance that will serve as "Web Server". Create 3 volumes in the same AZ as your Web Server EC2, each of 10 GiB.
 Learn How to Add EBS Volume to an EC2 instance here.
 
-![5022](https://github.com/SnehaS28/Dev-project-1/blob/images/web-volumes.png)
+![5021](https://github.com/SnehaS28/Dev-project-1/assets/109750527/3ecafe9c-173a-4554-8a19-4c906ea137cf)
 
 
 2. Attach all three volumes one by one to your Web Server EC2 instance.
+![5022](https://github.com/SnehaS28/Dev-project-1/assets/109750527/97161c20-3971-4135-847f-d0631e0dcc70)
 
-![5023](https://github.com/SnehaS28/Dev-project-1/blob/images/volume-1.png)
+![5023](https://github.com/SnehaS28/Dev-project-1/assets/109750527/c2323d5c-eda3-403e-8715-22fe9df00bd7)
+
 
 
 3. Open up the Linux terminal to begin configuration.
@@ -25,7 +27,7 @@ names will likely be xvdf, xvdh, xvdg.
 
 5. Use df -h command to see all mounts and free space on your server.
 
-![5025](https://github.com/SnehaS28/Dev-project-1/blob/images/df-h%20free%20space.png)
+![5025](https://github.com/SnehaS28/Dev-project-1/assets/109750527/9a950dba-d2fb-4e4b-822f-6e84cef98e30)
 
 6. Use gdisk utility to create a single partition on each of the 3 disks.
 
@@ -74,13 +76,15 @@ Now,  your changes has been configured succesfuly, exit out of the gdisk console
 
 7. Use lsblk utility to view the newly configured partition on each of the 3 disks.
 
-![5026](https://github.com/SnehaS28/Dev-project-1/blob/images/partition.png)
+![5026](https://github.com/SnehaS28/Dev-project-1/assets/109750527/cab70217-a2c4-4c96-b0fb-86c2b49661d4)
+
 
 
 8. Install lvm2 package using sudo yum install lvm2. Run sudo lvmdiskscan command to check for available partitions.
 
    Note: In RedHat/CentOS a linux package manager is used, so we use yum command.
-   ![5027](https://github.com/SnehaS28/Dev-project-1/blob/images/package-manager.png)
+   ![5027](https://github.com/SnehaS28/Dev-project-1/assets/109750527/3e52bc94-b40d-4e93-95d9-20e09386838e)
+
 
 10. Use pvcreate utility to mark each of 3 disks as physical volumes (PVs) to be used by LVM
 
@@ -93,7 +97,8 @@ sudo pvcreate /dev/xvdh1
 
 10. Verify that your Physical volume has been created successfully by running sudo pvs
 
-![5028](https://github.com/SnehaS28/Dev-project-1/blob/images/physicalvols.png)
+![5028](https://github.com/SnehaS28/Dev-project-1/assets/109750527/32a0d6de-2d8a-452b-a14a-fa4573b45e1e)
+
 
 
 11. Use vgcreate utility to add all 3 PVs to a volume group (VG). Name the VG webdata-vg
@@ -110,7 +115,8 @@ sudo vgs
 
 ```
 
-![5029](https://github.com/SnehaS28/Dev-project-1/blob/images/vg-webdata.png)
+![5029](https://github.com/SnehaS28/Dev-project-1/assets/109750527/9033005d-71ab-4332-9cef-3ec1a7bf8e8e)
+
 
 
 13. Use lvcreate utility to create 2 logical volumes. apps-lv (Use half of the PV size), and logs-lv Use the remaining space of
@@ -128,10 +134,6 @@ sudo lvcreate -n logs-lv -L 14G webdata-vg
 sudo lvs
 
 ```
-
-![5030](https://github.com/SnehaS28/Dev-project-1/blob/images/vg-webdata.png)
-
-
 15. Verify the entire setup
 
 ```
