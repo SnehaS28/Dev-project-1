@@ -172,7 +172,7 @@ Fill out your DB credentials:
 Login to your Wordpress:
   
 
-![5060]![wordpress](https://github.com/SnehaS28/Dev-project-1/assets/109750527/39c7b64a-945f-4bc0-a339-c2107b777356)
+![5060](https://github.com/SnehaS28/Dev-project-1/assets/109750527/39c7b64a-945f-4bc0-a339-c2107b777356)
 
 
 
